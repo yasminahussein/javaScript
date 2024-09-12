@@ -34,6 +34,7 @@ heightMark =1.88 , massMark =95;
 heightJohn = 1.76, massJohn =85;
 BMIMark = massMark / (heightMark * heightMark);
 BMIJohn = massJohn / (heightJohn * heightJohn);
+
 console.log(`BMI 2 \n for Mark = ${BMIMark}`);
 console.log(`BMI 20 for John = ${BMIJohn}`);
 
@@ -83,7 +84,9 @@ Test data:
 
 let scoreDolphins=(97+101+112)/3; 
 let scoreKoalas=(95+123+109)/3;
+
 console.log(scoreDolphins ,scoreKoalas);
+
 if (scoreDolphins > scoreKoalas && scoreDolphins >= 100){
     console.log("Dolphins win the trophy");
     
