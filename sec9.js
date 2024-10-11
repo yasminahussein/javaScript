@@ -72,3 +72,32 @@ printGoals(...game.scored); //have to spread cause if not it will pass as one ob
 // we used & cause it returns the last True or first false
 team1 < team2 && console.log("team1 is likelly to win");
 team2 < team1 && console.log("team2 is likelly to win");
+
+// *********** Practice ************
+
+//Maps: Iteration;
+const question = new Map([
+  ["question", "What is the best programming language in the world?"],
+  [1, "C"],
+  [2, "Java"],
+  [3, "JavaScript"],
+  ["correct", 3],
+  [true, "Correct 🎉"],
+  [false, "Try again!"],
+]);
+console.log(question);
+
+// Convert object to map
+//console.log(Object.entries(openingHours));
+//const hoursMap = new Map(Object.entries(openingHours));
+//console.log(hoursMap);
+
+// Quiz app
+console.log(question.get("question"));
+for (const [key, value] of question) {
+  if (typeof key === "number") console.log(`Answer ${key}: ${value}`);
+}
+
+const answer = 1;
+
+console.log(question.get(answer === question.get("correct")));
