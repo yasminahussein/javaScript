@@ -57,7 +57,7 @@ let {
   odds: { team1, x: draw, team2 },
 } = game; //== let { team1, x: draw, team2 } = game.odds;
 
-console.log(team1, team2, draw);
+/*console.log(team1, team2, draw);
 
 // 6- create function that take an arbitrary number of player names (not an array) and prints the total number as score to the console,So we use spread operator
 function printGoals(...players) {
@@ -72,10 +72,11 @@ printGoals(...game.scored); //have to spread cause if not it will pass as one ob
 // we used & cause it returns the last True or first false
 team1 < team2 && console.log("team1 is likelly to win");
 team2 < team1 && console.log("team2 is likelly to win");
-
+*/
 // *********** Practice ************
 
 //Maps: Iteration;
+/*
 const question = new Map([
   ["question", "What is the best programming language in the world?"],
   [1, "C"],
@@ -101,3 +102,33 @@ for (const [key, value] of question) {
 const answer = 1;
 
 console.log(question.get(answer === question.get("correct")));
+*/
+// *********** Challenge2 ************
+//2.1
+
+//.entries work with list to return index and item
+for (const [i, item] of game.scored.entries()) {
+  console.log(`Goal ${i + 1} : ${item}`);
+}
+//2.2
+function calc_avg(odds) {
+  let avg = 0;
+  for (const odd of Object.values(odds)) {
+    avg += odd;
+  }
+  console.log(avg);
+  console.log(Object.values(odds));
+  avg /= Object.values(odds).length;
+  console.log(avg);
+}
+
+calc_avg(game.odds);
+//2.3
+for ([key, val] of Object.entries(game.odds)) {
+  const teamScore = key === "x" ? "draw" : `vectory ${game[key]}`;
+  console.log(`Odd of ${teamScore}: ${val}`);
+}
+
+// *********** Challenge3 ************
+
+// *********** Challenge4 ************
