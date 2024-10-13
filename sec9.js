@@ -104,6 +104,7 @@ const answer = 1;
 console.log(question.get(answer === question.get("correct")));
 */
 // *********** Challenge2 ************
+/*
 //2.1
 
 //.entries work with list to return index and item
@@ -128,7 +129,47 @@ for ([key, val] of Object.entries(game.odds)) {
   const teamScore = key === "x" ? "draw" : `vectory ${game[key]}`;
   console.log(`Odd of ${teamScore}: ${val}`);
 }
+*/
 
 // *********** Challenge3 ************
+
+const gameEvents = new Map([
+  [17, "⚽ GOAL"],
+  [36, "� Substitution"],
+  [47, "⚽ GOAL"],
+  [61, "� Substitution"],
+  [64, "� Yellow card"],
+  [69, "� Red card"],
+  [70, "� Substitution"],
+  [72, "� Substitution"],
+  [76, "⚽ GOAL"],
+  [80, "⚽ GOAL"],
+  [92, "� Yellow card"],
+]);
+
+//3.1 make the set in array so use the spread operator
+let events = [...new Set(gameEvents.values())];
+console.log(events);
+
+//3.2
+
+gameEvents.delete(64);
+console.log(gameEvents);
+
+//3.3
+// to get the last element in the map , turn it into array
+const last_event = [...gameEvents.keys()].pop();
+console.log(
+  `An event happened on average ,every ${last_event / gameEvents.size} minutes`
+);
+
+//3.4
+for (const [key, value] of gameEvents.entries()) {
+  if (key < 45) {
+    console.log(`[FIRST HALF] ${key}:${value} `);
+  } else {
+    console.log(`[Second HALF] ${key}:${value} `);
+  }
+}
 
 // *********** Challenge4 ************
