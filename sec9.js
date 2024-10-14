@@ -132,7 +132,7 @@ for ([key, val] of Object.entries(game.odds)) {
 */
 
 // *********** Challenge3 ************
-
+/*
 const gameEvents = new Map([
   [17, "⚽ GOAL"],
   [36, "� Substitution"],
@@ -171,5 +171,20 @@ for (const [key, value] of gameEvents.entries()) {
     console.log(`[Second HALF] ${key}:${value} `);
   }
 }
-
+*/
 // *********** Challenge4 ************
+
+let list_vars = [
+  "underscore_case",
+  "first_name",
+  "Some_Variable",
+  "calculate_AGE",
+  "delayed_departure",
+];
+for (let [i, variable] of list_vars.entries()) {
+  const [n1, n2] = variable.toLowerCase().split("_");
+  //store it in variableto make more operations ;
+  const edit_var = `${n1}${n2.replace(n2[0], n2[0].toUpperCase())}`;
+  // padding to make all strings same size and end at the same point
+  console.log(`${edit_var.padEnd(20)}${"🤝".repeat(i + 1)}`);
+}
